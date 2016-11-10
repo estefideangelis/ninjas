@@ -11,6 +11,8 @@ ZPlat.PreloadState = {
     this.load.setPreloadSprite(this.preloadBar);
 
     //load game assets    
+	this.load.image('fin', 'assets/images/fin.png');//Menu del juego
+	this.load.image('titlePage', 'assets/images/inicio.png');//Menu del juego
 	this.load.image('background', 'assets/img/background.png');
     this.load.image('platform', 'assets/images/platform.png');
     this.load.image('goal', 'assets/images/goal.png');
@@ -26,6 +28,6 @@ ZPlat.PreloadState = {
 	
   },
   create: function() {
-    this.state.start('Game');
+    this.state.start('MainMenu');
   }
 };

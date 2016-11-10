@@ -18,18 +18,24 @@ ZPlat.GameState = {
 
 	this.coinText;
 	this.totalCoins=0;
+	this.timer=0;
 
     //gravity
     this.game.physics.arcade.gravity.y = 1000;    
     
     //cursor keys to move the player
     this.cursors = this.game.input.keyboard.createCursorKeys();
+	
+  
+ 
   },
   create: function() {
 	  
 	  this.background = this.add.image(0, 0, 'background');
+	 
     //load current level
     this.loadLevel();
+	
 	
 ///////////////////////////////////////////////////////////////////////////////
     this.coins = this.game.add.group();
@@ -45,13 +51,14 @@ ZPlat.GameState = {
 	//this.chest.enableBody = true;
 }	
 	
-	this.coinText = this.game.add.text(10, 10, 'Banderines: 0/8', { font:"11px arial", fill: '#fff' });
+	this.coinText = this.game.add.text(10, 10, 'Banderines: 0/5', { font:"11px arial", fill: '#fff' });
 	this.coinText.fixedToCamera = true;
 	
-	this.timerText = this.game.add.text(100, 10, 'Tiempo: ', { font:"11px arial", fill: '#fff' });
+	this.timerText = this.game.add.text(100, 10, 'Tiempo:0', { font:"11px arial", fill: '#fff' });
 	this.timerText.fixedToCamera = true;
 	
 	this.timerDown();
+
 	
   },   
   update: function() {    
@@ -190,6 +197,9 @@ ZPlat.GameState = {
 	  
     }, this);
   },
+  
+  
+  
   hitEnemy: function(player, enemy){
     if(enemy.body.touching.up){
       enemy.kill();
@@ -204,20 +214,34 @@ ZPlat.GameState = {
   },
   pickCoin:function(player, coin){
 	  this.totalCoins+=1;
-	this.coinText.text = 'Coins: ' + this.totalCoins +'/8';
+	this.coinText.text = 'Banderines: ' + this.totalCoins +'/5';
 	  coin.kill();
+	  if (this.totalCoins==5){
+		   this.displayEnd(false);
+	  }
+	  
   },
+  
+   displayEnd: function () {
+
+
+   this.fin = this.add.sprite(0, 0,'fin' );
+  
+  
+  },
+  
   
  timerDown:function(){ 
  
  setInterval(function(){	  
-	if(this.timer>0){
-		this.timer -= 1;
+	if(this.timer==0){
+		this.timer += 1;
 		this.timerText.text = 'Tiempo: ' + this.timer;
-	} else {
+		
+	} /*else {
 		//this.gameOver();
 		//gameOverText.fixedToCamera = true;
-	}
+	}*/
 	},1000);
 	
  }
