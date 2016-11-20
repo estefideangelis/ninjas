@@ -1,5 +1,5 @@
 <?php
-$conexion=mysqli_connect("localhost", "ucymxbzr_estefi", "maimo!123", "ucymxbzr_movivet");
+$conexion=mysqli_connect("localhost", "ucymxbzr_estefi", "maimo!123", "ucymxbzr_juego");
 
 //$conexion=mysqli_connect("localhost","ucymxbzr_estefi","maimo!123","ucymxbzr_movivet");
 

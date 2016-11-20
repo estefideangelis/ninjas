@@ -5,17 +5,37 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 		<title>Desafio Ninja</title>
-
+       <link rel="stylesheet" type="text/css" href="style.css">
 		<style>
 		  body {
-		  	background-color: black;
+		  	background-color:fff;
 		    padding: 0px;
 		    margin: 0px;
 		  }
 		  </style>
 	</head>
 
-	<body>  
+	<body> 
+    
+         <!-- *.. LOGUIN ..* -->
+   <center> <div id="loguin">
+<div id="content" class="content">
+<form  id="formulario">
+<center><h2>INICIAR SESIÓN</h2></center>
+<div class="contenedor-inputs1">
+<input type="text" placeholder="Usuario:" class="user-black" id="nombredeusuario" name="nombredeusuario" data-theme="c required">
+<input type="password" class="lock-black" placeholder="Contraseña" id="clave" name="clave" data-theme="c" required>
+</br><input type="submit" id="botonLogin" value="Iniciar Sesion">
+</div>
+</form>
+<div id="datos_inc" class="datos_inc" style="color:#000000; padding-top: 1em"></div>
+			<p>¿No tienés una cuenta? <a href="#">Registrate</a></p>
+            
+            </div>
+
+		</div></center>
+        
+          
 		<script type="text/javascript" src="js/phaser.js"></script>
 		<script type="text/javascript" src="js/states/Boot.js"></script>
 		<script type="text/javascript" src="js/states/Preload.js"></script>
@@ -24,8 +44,11 @@
         <script type="text/javascript" src="js/states/MainMenu.js"></script>
 		<script src="js/scaler.js"></script>
 		<script src="js/main.js"></script>
+        <script src="js/sesion.js"></script>
+
+        	
         
-        <script type="text/javascript">
+      <!--  <script type="text/javascript">
 			var audio = new Audio('assets/music.mp3');
 			audio.play();
 	
@@ -34,41 +57,9 @@
 			//audio.play();	
 			//audio.stop();	
 			});
-		</script>
+		</script>-->
         
-        
-                 
-							
-										<div class="tab-content-inner active" data-content="signup">
-											<h3>Iniciar sesión:</h3>
-											<form action="validar.php" method="post">
-												
-                                                <div class="row form-group">
-													<div class="col-md-12">
-														<label for="nombre">Usuario</label>
-														<input type="text" class="form-control" name="nombre" id="nombre" >
-													</div>
-											
-												</div>
-                                               
-                                                                                                             
-                                                   
-												<div class="row form-group">
-													<div class="col-md-12">
-														<label for="password">Password</label>
-														<input type="password" class="form-control" name="password" id="password"  required>
-													</div>
-												</div>
-                                                
-                                                                                                
-                                                <div class="row form-group">
-													<div class="col-md-12">
-														<input type="submit" class="btn btn-primary" value="Iniciar sesion">
-													</div>
-												</div>
-
-											</form>	
-										</div>
+        					
                                         				
 									
 					

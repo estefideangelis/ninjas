@@ -9,3 +9,4 @@ ZPlat.game.state.add('Preload', ZPlat.PreloadState);
 ZPlat.game.state.add('Game', ZPlat.GameState);
 ZPlat.game.state.add('MainMenu', ZPlat.MainMenu);
 ZPlat.game.state.start('Boot'); 
+

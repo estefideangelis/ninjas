@@ -13,12 +13,15 @@ ZPlat.GameState = {
     this.BOUNCING_SPEED = 150;
     this.DASHING_SPEED = 500;
 
-	/*this.timer=60;
-	this.timerText;*/
+	/*this.timer=60;*/
+	
+    this.timerText;
+	this.timer;
+    this.total = 0;
 
 	this.coinText;
 	this.totalCoins=0;
-	this.timer=0;
+	
 
     //gravity
     this.game.physics.arcade.gravity.y = 1000;    
@@ -30,8 +33,8 @@ ZPlat.GameState = {
  
   },
   create: function() {
-	  
-	  this.background = this.add.image(0, 0, 'background');
+	
+	 this.background = this.add.image(0, 0, 'background');
 	 
     //load current level
     this.loadLevel();
@@ -48,20 +51,58 @@ ZPlat.GameState = {
 	//this.chest = this.game.add.sprite(400,50, 'chest');
 	//this.game.physics.enable(this.chest, Phaser.Physics.ARCADE);
 	//this.chest.body.collideWorldBounds = true;
-	//this.chest.enableBody = true;
+	//this.chest.enableBody = true;	
+	
 }	
+
+	 //  Create our Timer
+    this.timer = this.game.time.create(false);
+
+    //  Set a TimerEvent to occur after 2 seconds
+    this.timer.loop(1000, this.updateCounter, this);
+
+    //  Start the timer running - this is important!
+    //  It won't start automatically, allowing you to hook it to button events and the like.
+    this.timer.start();
 	
-	this.coinText = this.game.add.text(10, 10, 'Banderines: 0/5', { font:"11px arial", fill: '#fff' });
-	this.coinText.fixedToCamera = true;
-	
-	this.timerText = this.game.add.text(100, 10, 'Tiempo:0', { font:"11px arial", fill: '#fff' });
+/*	this.timerText = this.game.add.text(100, 10, 'Tiempo: ' + this.total, { font:"11px arial", fill: '#fff' });
 	this.timerText.fixedToCamera = true;
+	*/
+   
 	
-	this.timerDown();
+	
+	this.coinText = this.game.add.text(10, 10, 'Banderines: 0/5', { font:"16px monospace", fill: '#fff' });
+	this.coinText.fixedToCamera = true;
+
+
+
+	
+	
+
 
 	
   },   
-  update: function() {    
+  
+  updateCounter:function(){ 
+
+
+  this.total++;
+  
+
+ },
+
+
+  render: function() { 
+
+  this.game.debug.text('Tiempo: ' + this.total, 175, 22);
+ 
+},
+
+  update: function() { 
+ /* 	this.timerArranca(); */ 
+  
+/*	this.time.events.loop(Phaser.Timer.SECOND, timerArranca, this);*/
+	
     //collision between the player, enemies and the collision layer
     this.game.physics.arcade.collide(this.player, this.collisionLayer); 
     this.game.physics.arcade.collide(this.enemies, this.collisionLayer); 
@@ -114,7 +155,7 @@ ZPlat.GameState = {
     
     //kill enemy if it falls off
     if(this.player.bottom == this.game.world.height){
-      this.gameOver();
+    this.gameOver();
     }
   },
   loadLevel: function(){  
@@ -178,8 +219,11 @@ ZPlat.GameState = {
     return result;
   },
   changeLevel: function(player, goal){
-	  if(this.totalCoins==8){
-    this.game.state.start('Game', true, false, goal.nextLevel);
+	  if(this.totalCoins==5){
+    //this.game.state.start('Game', true, false, goal.nextLevel);
+	this.player.position.x=50;
+	this.player.position.y=50;
+	
 	  } else {
 		  // this.loadLevel();
 	  }
@@ -206,11 +250,14 @@ ZPlat.GameState = {
       player.body.velocity.y = -this.BOUNCING_SPEED;
     }
     else {
-      this.gameOver();
+     this.gameOver();
+	
     }
   },
   gameOver: function(){
-    this.game.state.start('Game', true, false, this.currentLevel);
+   /* this.game.state.start('Game', true, false, this.currentLevel);*/
+    this.player.position.x=50;
+	this.player.position.y=50;
   },
   pickCoin:function(player, coin){
 	  this.totalCoins+=1;
@@ -226,24 +273,22 @@ ZPlat.GameState = {
 
 
    this.fin = this.add.sprite(0, 0,'fin' );
-  
+   this.fin .fixedToCamera = true;
+   this.timer.stop();
+   
+  /* sessionStorage.setItem("Tiempin", this.timer);
+   
+   this.tiempoFinal = sessionStorage.getItem("Tiempin");
+   
+   alert(this.tiempoFinal);
+    */
+    
+
+
   
   },
   
   
- timerDown:function(){ 
  
- setInterval(function(){	  
-	if(this.timer==0){
-		this.timer += 1;
-		this.timerText.text = 'Tiempo: ' + this.timer;
-		
-	} /*else {
-		//this.gameOver();
-		//gameOverText.fixedToCamera = true;
-	}*/
-	},1000);
-	
- }
   
 };
