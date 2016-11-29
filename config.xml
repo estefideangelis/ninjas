@@ -1,7 +1,6 @@
-﻿<?xml version='1.0' encoding='utf-8'?> <!-- denomina que es XML -->
+<?xml version='1.0' encoding='utf-8'?> <!-- denomina que es XML -->
 <!-- el id es el dominio pero invertido con el nombre al final
      la version es de la app -->
-<<<<<<< HEAD
 <widget id="tk.juego-ninja" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Ninjas</name> <!-- Nombre de la APP -->
     <description>
@@ -9,15 +8,6 @@
     </description>
     <author email="essteffi@hotmail.com" href="http://www.estefideangelis.tk"> <!-- datos de contacto del autor -->
         Estefanía De Angelis
-=======
-<widget id="" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Desafio Ninja</name> <!-- Nombre de la APP -->
-    <description>
-        Video Juego de plataformas, desafio Ninja  <!-- Descripcion en phonegap, si no se especifica otra en el appleStore o googleStore, va a aparecer esta descripcion -->
-    </description>
-    <author email="essteffi@hotmail.com" href="http://www.juego-ninja.tk"> <!-- datos de contacto del autor -->
-        Estefanía De Angelis y Silvina Orengo
->>>>>>> origin/master
     </author>
     
         <preference name="permissions" value="none" />
