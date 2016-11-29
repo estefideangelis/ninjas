@@ -1,21 +1,21 @@
 <?xml version='1.0' encoding='utf-8'?> <!-- denomina que es XML -->
 <!-- el id es el dominio pero invertido con el nombre al final
      la version es de la app -->
-<widget id="" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>mirame vidrieras</name> <!-- Nombre de la APP -->
+<widget id="tk.juego-ninja" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Ninjas</name> <!-- Nombre de la APP -->
     <description>
-        Soporte tecnico <!-- Descripcion en phonegap, si no se especifica otra en el appleStore o googleStore, va a aparecer esta descripcion -->
+        Juego Ninjas <!-- Descripcion en phonegap, si no se especifica otra en el appleStore o googleStore, va a aparecer esta descripcion -->
     </description>
-    <author email="essteffi@hotmail.com" href="http://www.juego-ninja.tk"> <!-- datos de contacto del autor -->
+    <author email="essteffi@hotmail.com" href="http://www.estefideangelis.tk"> <!-- datos de contacto del autor -->
         Estefanía De Angelis
     </author>
     
-    <preference name="permissions" value="none" />
-    <preference name="phonegap-version" value="3.7.0" /> <!-- Version en la que se va a compilar, se puede elegir en base a lo que uno usa -->
-    <preference name="orientation" value="default" />  <!-- default es portait -->
-    <preference name="target-device" value="universal" /> <!-- si es para ciertos dispositivos -->
-    <preference name="fullscreen" value="true" /> <!-- si es full o no, si se ve el reloj y demas -->
-    <preference name="webviewbounce" value="true" /> 
+        <preference name="permissions" value="none" />
+    <preference name="phonegap-version" value="3.7.0" />
+    <preference name="orientation" value="default" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="true" />
+    <preference name="webviewbounce" value="true" />
     <preference name="prerendered-icon" value="true" />
     <preference name="stay-in-webview" value="false" />
     <preference name="ios-statusbarstyle" value="black-opaque" />
@@ -26,13 +26,17 @@
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
+	
+    <preference name="SplashScreen" value="foo" />
+	<preference name="SplashScreenDelay" value="10000" />
+		
+		
+<!--	<gap:plugin name="org.apache.cordova.splashscreen" spec="1.0.0" source="pgb" />-->
+		
+    <!--<gap:plugin name="org.apache.cordova.device-orientation" />--><!--plugins en la pag de phonegap, la direccion que poner segun el plugin-->
     
-    <!-- Plugin: Funcionalidad no realizable en HTML, es algo aparte -->
-    <gap:plugin name="org.apache.cordova.device-orientation" /> <!-- Hay que especificar los plugins que se vayan a utilizar -->
-    
-    <!-- <icon src="icon.png" /> --> <!-- Icono por default de la app -->
-    <!-- Variacion del icono por plataformas y medidas -->
-    <!-- <icon gap:platform="android" gap:qualifier="ldpi" src="res/icon/android/icon-36-ldpi.png" />
+    <icon src="icon.png" /><!--icono de la app con sus variantes de resolucion de icono, tmb por plataforma http://pgicons.abiro.com/ subir la img y te arma los iconos descomprimir rar en la carpeta de la app. la carpeta res-->
+    <icon gap:platform="android" gap:qualifier="ldpi" src="res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="res/icon/android/icon-48-mdpi.png" />
     <icon gap:platform="android" gap:qualifier="hdpi" src="res/icon/android/icon-72-hdpi.png" />
     <icon gap:platform="android" gap:qualifier="xhdpi" src="res/icon/android/icon-96-xhdpi.png" />
@@ -44,10 +48,8 @@
     <icon gap:platform="ios" height="144" src="res/icon/ios/icon-72-2x.png" width="144" />
     <icon gap:platform="webos" src="res/icon/webos/icon-64.png" />
     <icon gap:platform="winphone" src="res/icon/windows-phone/icon-48.png" />
-    <icon gap:platform="winphone" gap:role="background" src="res/icon/windows-phone/icon-173.png" /> -->
-
-    <!-- Splash -->
-    <!-- <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
+    <icon gap:platform="winphone" gap:role="background" src="res/icon/windows-phone/icon-173.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
     <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="res/screen/android/screen-mdpi-portrait.png" />
     <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="res/screen/android/screen-hdpi-portrait.png" />
     <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="res/screen/android/screen-xhdpi-portrait.png" />
@@ -57,6 +59,6 @@
     <gap:splash gap:platform="ios" height="1136" src="res/screen/ios/screen-iphone-portrait-568h-2x.png" width="640" />
     <gap:splash gap:platform="ios" height="1024" src="res/screen/ios/screen-ipad-portrait.png" width="768" />
     <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
-    <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" /> -->
+    <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
     <access origin="*" />
 </widget>

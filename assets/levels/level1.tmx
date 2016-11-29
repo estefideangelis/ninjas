@@ -977,7 +977,7 @@
     <property name="type" value="player"/>
    </properties>
   </object>
-  <object id="2" gid="148" x="304" y="169" width="35" height="35">
+  <object id="2" gid="148" x="302" y="175" width="35" height="35">
    <properties>
     <property name="key" value="goal"/>
     <property name="nextLevel" value="level2"/>
