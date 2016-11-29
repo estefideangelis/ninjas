@@ -114,12 +114,12 @@ ZPlat.GameState = {
     this.player.body.velocity.x = 0;
 
     if(this.cursors.left.isDown || this.player.customParams.isMovingLeft) {
-      this.player.body.velocity.x = this.RUNNING_SPEED;
+      this.player.body.velocity.x = -this.RUNNING_SPEED;
       this.player.scale.setTo(1, 1);
       this.player.play('walking_left');
       if(this.cursors.down.isDown)
       {
-        this.player.body.velocity.x = this.DASHING_SPEED;
+        this.player.body.velocity.x = -this.DASHING_SPEED;
       }
     }
     else if(this.cursors.right.isDown || this.player.customParams.isMovingRight) {
@@ -186,8 +186,8 @@ ZPlat.GameState = {
     var playerArr = this.findObjectsByType('player', this.map, 'objectsLayer');
     this.player = this.add.sprite(playerArr[0].x, playerArr[0].y, 'player', 3);
     this.player.anchor.setTo(0.5);
-    this.player.animations.add('walking_right', [ 0, 1, 2 ,0 ,1 ,2 ], 6, true);
-	this.player.animations.add('walking_left', [ 3, 4, 5 ,3 ,4 ,5 ], 6, true);
+    this.player.animations.add('walking_right', [ 0, 1, 2, 1,0 , 1, 2, 1 ], 6, true);
+	this.player.animations.add('walking_left', [ 3, 4, 5, 4 , 3, 4, 5, 4 ], 6, true);
     this.game.physics.arcade.enable(this.player);
     this.player.customParams = {};
     this.player.body.collideWorldBounds = true;
