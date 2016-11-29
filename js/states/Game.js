@@ -294,8 +294,8 @@ ZPlat.GameState = {
   },
   
    createOnscreenControls: function(){
-    this.leftArrow = this.add.button(20, this.game.height - 60, 'arrowButton');
-    this.rightArrow = this.add.button(110, this.game.height - 60, 'arrowButton');
+    this.leftArrow = this.add.button(20, this.game.height - 60, 'arrowButtonLeft');
+    this.rightArrow = this.add.button(110, this.game.height - 60, 'arrowButtonRight');
     this.actionButton = this.add.button(this.game.width - 100, this.game.height - 60, 'actionButton');
 	
 

@@ -26,7 +26,8 @@ ZPlat.PreloadState = {
     
 	this.load.image('coin', 'assets/images/coin.png');
 	
-	this.load.image('arrowButton', 'assets/images/arrowButton.png');    
+	this.load.image('arrowButtonLeft', 'assets/images/arrowButtonLeft.png'); 
+	this.load.image('arrowButtonRight', 'assets/images/arrowButtonRight.png');    
     this.load.image('actionButton', 'assets/images/actionButton.png'); 
 	
 	
