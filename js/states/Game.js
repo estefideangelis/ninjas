@@ -22,19 +22,14 @@ ZPlat.GameState = {
 	this.coinText;
 	this.totalCoins=0;
 	
-
     //gravity
     this.game.physics.arcade.gravity.y = 1000;    
     
     //cursor keys to move the player
     this.cursors = this.game.input.keyboard.createCursorKeys();
-	
-  
- 
+
   },
   create: function() {
-	
-
 	
 	/*this.background = this.add.image(0, 0, 'background');*/
 	 
@@ -79,12 +74,6 @@ ZPlat.GameState = {
 	this.coinText.fixedToCamera = true;
 
 
-
-	
-	
-
-
-	
   },   
   
   updateCounter:function(){ 
@@ -125,12 +114,12 @@ ZPlat.GameState = {
     this.player.body.velocity.x = 0;
 
     if(this.cursors.left.isDown || this.player.customParams.isMovingLeft) {
-      this.player.body.velocity.x = -this.RUNNING_SPEED;
+      this.player.body.velocity.x = this.RUNNING_SPEED;
       this.player.scale.setTo(1, 1);
       this.player.play('walking_left');
       if(this.cursors.down.isDown)
       {
-        this.player.body.velocity.x = -this.DASHING_SPEED;
+        this.player.body.velocity.x = this.DASHING_SPEED;
       }
     }
     else if(this.cursors.right.isDown || this.player.customParams.isMovingRight) {
@@ -176,7 +165,7 @@ ZPlat.GameState = {
     //send background to the back
     this.game.world.sendToBack(this.backgroundLayer);
 	
-    
+  
     //collision layer should be collisionLayer
     this.map.setCollisionBetween(1, 160, true, 'collisionLayer');
     
@@ -276,7 +265,6 @@ ZPlat.GameState = {
   
    displayEnd: function () {
 
-
    this.fin = this.add.sprite(0, 0,'fin' );
    this.fin .fixedToCamera = true;
    this.timer.stop();
@@ -287,9 +275,6 @@ ZPlat.GameState = {
    
    alert(this.tiempoFinal);
     */
-    
-
-
   
   },
   
@@ -323,7 +308,7 @@ ZPlat.GameState = {
     }, this);
 
     this.leftArrow.events.onInputUp.add(function(){
-      this.player.customParams.isMovingLeft = true;
+      this.player.customParams.isMovingLeft = false;
     }, this);
 
     this.leftArrow.events.onInputOver.add(function(){
